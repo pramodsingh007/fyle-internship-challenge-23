@@ -30,14 +30,12 @@ export class FormComponent {
   });
 
   onSearch() {
-    console.log(this.form.value);
 
     this.apiService.getUser(this.form.value.username!).subscribe(
       (data) => {
         this.router.navigate(['/search', this.form.value.username], {
           queryParams: { page: 1, per_page: 10 },
         });
-        console.log(data);
       },
       (error) => {
         this.hasError = true;

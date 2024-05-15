@@ -12,27 +12,15 @@ export class ApiService {
   ) { }
 
   getUser(githubUsername: string) {
-    return this.httpClient.get(`https://api.github.com/users/${githubUsername}`,{
-      headers:{
-        "Authorization": `token ${'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'}`
-      }
-    });
+    return this.httpClient.get(`https://api.github.com/users/${githubUsername}`);
   }
 
   getRepos(githubUsername:string){
-    return  this.httpClient.get(`https://api.github.com/users/${githubUsername}/repos`,{
-      headers:{
-        "Authorization": `token ${'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'}`
-      }
-    });
+    return  this.httpClient.get(`https://api.github.com/users/${githubUsername}/repos`);
   }
 
   getReposByPage(githubUsername:string,pageNo:string,ItemsPerPage:string){
-    return this.httpClient.get(`https://api.github.com/users/${githubUsername}/repos?page=${pageNo}&per_page=${ItemsPerPage}`,{
-      headers:{
-        "Authorization": `token ${'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'}`
-      }
-    })
+    return this.httpClient.get(`https://api.github.com/users/${githubUsername}/repos?page=${pageNo}&per_page=${ItemsPerPage}`)
   }
 
 

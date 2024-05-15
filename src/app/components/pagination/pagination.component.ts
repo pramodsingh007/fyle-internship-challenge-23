@@ -30,16 +30,13 @@ export class PaginationComponent implements OnInit {
   });
 
   selectHandler(){
-    console.log(this.form.value.pageSize)
     this.sendPageSize.emit(this.form.value.pageSize!)
   }
 
   ngOnInit(): void {
     const username = this.route.snapshot.paramMap.get('username')!;
     this.apiService.getRepos(username!).subscribe((data: any) => {
-      console.log(data)
       this.totalPages = Math.round(data.length/this.perPage);
-      console.log(this.totalPages)
     });
   }
 

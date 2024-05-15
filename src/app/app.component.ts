@@ -20,7 +20,7 @@ export class AppComponent{
   }
 
   ngOnInit() {
-    this.apiService.getUser('johnpapa').subscribe(console.log);
+    
   }
   
 }

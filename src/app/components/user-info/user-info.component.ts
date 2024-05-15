@@ -43,7 +43,6 @@ export class UserInfoComponent implements OnInit {
     });
 
     this.route.paramMap.subscribe((params:any)=>{
-      console.log('username updated',params.params.username)
       this.username = params.params.username
       this.fetchRepos()
       this.fetchProfile()
@@ -51,7 +50,6 @@ export class UserInfoComponent implements OnInit {
   }
 
   receiveEvent(username: string) {
-    console.log(username);
     this.router.navigate(['/search', username], {
       queryParams: { page: 1, per_page: this.perPage },
     });
@@ -59,7 +57,6 @@ export class UserInfoComponent implements OnInit {
   }
 
   receivePageSize(pageSize:string){
-    console.log(pageSize)
     this.router.navigate(['/search', this.username], {
       queryParams: { page: 1, per_page: pageSize },
     });
@@ -77,7 +74,6 @@ export class UserInfoComponent implements OnInit {
           this.hasError = false
           this.publicRepos = data;
           this.loading = false;
-          console.log(this.publicRepos);
         },()=>{
           this.hasError = true
         });
@@ -89,7 +85,6 @@ export class UserInfoComponent implements OnInit {
     this.apiService.getUser(this.username).subscribe((data:any)=>{
       this.hasError=false
       this.userInfo = data
-      console.log(this.userInfo)
       this.loading=false
     },()=>{
       this.hasError = true
