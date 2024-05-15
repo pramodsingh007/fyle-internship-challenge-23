@@ -1,0 +1,4 @@
+<app-search (sendEvent)="receiveEvent($event)" [hasError]="hasError"></app-search>
+<app-profile [userInfo]="userInfo" [loading]="loading"></app-profile>
+<app-card   [publicRepos]="publicRepos" [loading]="loading"></app-card>
+<app-pagination currentPage="{{currentPage}}" (sendPageSize)="receivePageSize($event)" [perPage]="perPage"></app-pagination>

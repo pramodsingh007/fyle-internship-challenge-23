@@ -1,0 +1,35 @@
+<app-profile-skeleton *ngIf="loading"></app-profile-skeleton>
+<div class="flex items-center justify-center" *ngIf="!loading">
+  <div class="w-full bg-white p-8 rounded ">
+    <div class="flex gap-24 items-center">
+      <div class="flex-shrink-0 mr-4">
+        <img
+          class="h-28 w-28 rounded-full"
+          src="{{ userInfo.avatar_url }}"
+          alt="User Avatar"
+        />
+      </div>
+      <div>
+        <p class="font-semibold">{{ userInfo.name }}</p>
+        <p class="text-gray-600">{{ userInfo.bio }}</p>
+        <p class="text-gray-600 flex gap-1">
+          <img
+            width="20"
+            height="20"
+            src="https://img.icons8.com/3d-fluency/50/marker.png"
+            alt="marker"
+          />
+          {{ userInfo.location }}
+        </p>
+        <p class="text-gray-600">Twitter: {{ userInfo.twitter_username }}</p>
+      </div>
+    </div>
+    <p class=" flex gap-1">
+        <img width="20" height="20" src="https://img.icons8.com/material-outlined/20/link--v1.png" alt="link--v1"/>
+        <a href="{{ userInfo.html_url }}" target="_blank">
+            {{ userInfo.html_url }}
+        </a>
+    </p>
+  </div>
+</div>
+

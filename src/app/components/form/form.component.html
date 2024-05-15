@@ -1,0 +1,15 @@
+<div class="min-h-screen flex items-center justify-center">
+    <div class="max-w-md w-full bg-white p-8 rounded shadow-md">
+        <h2 class="text-3xl font-semibold mb-4">Github Repo Viewer</h2>
+        <form [formGroup]="form">
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700">GitHub Username:</label>
+                <input [formControl]="username" type="text" id="username" name="username" class="mt-1 px-4 py-2 w-full border-gray-300 border rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+              
+                <p *ngIf="hasError" class=" text-sm text-red-700">invalid github username</p>
+                
+            </div>
+            <button [disabled]="form.invalid" (click)="onSearch()" type="submit" class="w-full bg-indigo-500 text-white py-2 px-4 rounded-md disabled:bg-slate-300 hover:bg-indigo-600 transition duration-300">Search</button>
+        </form>
+    </div>
+  </div>
